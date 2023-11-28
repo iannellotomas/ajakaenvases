@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../Header/Header";
+import Header from "../header/Header";
 import Advisory from "../advisory/Advisory";
 import Benefits from "../benefits/Benefits";
 import Contact from "../contact/Contact";
