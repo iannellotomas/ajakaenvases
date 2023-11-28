@@ -1,0 +1,29 @@
+.message {
+  position: fixed;
+  z-index: 100;
+  bottom: 30px;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 25px;
+  background: #fff;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px #0000001f;
+  color: var(--blue);
+  opacity: 0;
+  transform: translateY(50px);
+  pointer-events: none;
+  transition: .25s ease;
+  font-weight: 600;
+}
+
+.message ion-icon {
+  font-size: 24px;
+  --ionicon-stroke-width: 40px;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

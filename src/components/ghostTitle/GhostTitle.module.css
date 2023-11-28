@@ -1,0 +1,13 @@
+.ghostTitle {
+  color: #202333;
+  font-size: 8vw;
+  position: absolute;
+  pointer-events: none;
+  opacity: .2;
+  top: 12vh;
+  background-image: linear-gradient(180deg, #202333 50%, #fff 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+}
