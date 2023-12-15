@@ -1,0 +1,150 @@
+.productDetail {
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: calc(100% - 40px);
+  height: calc(100vh - 40px);
+  padding: 20px;
+  background: #E7EFF7;
+  backdrop-filter: blur(10px);
+  color: var(--blue);
+  transition: var(--transition-low);
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.productDetail .header {
+  width: 90vw;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  height: 50px;
+}
+
+.header .logo {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+}
+
+.productDetail .header h2 {
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.productDetail .header button {
+  padding: 10px;
+  color: var(--blue);
+  background: #00000017;
+  border-radius: 50%;
+  display: flex;
+  font-size: 24px;
+  transition: var(--transition);
+}
+
+.productDetail .header button:hover {
+  transform: scale(.95);
+}
+
+.productDetail .center {
+  position: relative;
+  width: 90vw;
+  max-width: 600px;
+  z-index: 1000;
+  height: calc(70vh - 50px);
+  border-radius: 10px;
+  background: #ececec4a;
+}
+
+.productDetail .mainPhoto {
+  background: #fff;
+  box-shadow: 0 5px 15px -5px #67676731;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s ease;
+  overflow: hidden;
+}
+
+.productDetail .mainPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.productDetail .controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.productDetail .secondaryPhoto {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  border-radius: 10px;
+  background: #d2d2d2;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: var(--transition-low);
+  overflow: hidden;
+}
+
+.productDetail .secondaryPhoto:not(.active):hover {
+  background: #c0c0c0;
+}
+
+.productDetail .secondaryPhoto.active {
+  cursor: auto;
+  border-color: transparent;
+  outline: 5px solid #5d87c6;
+}
+
+.productDetail .secondaryPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.productDetail .secondaryPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.productDetail .skeleton {
+  width: 200%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: #dbdbdb;
+  border-color: transparent;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition-low);
+}
+
+.productDetail .skeleton.active {
+  opacity: 1;
+}
+
+.mainPhoto.active {
+  opacity: 1 !important;
+}

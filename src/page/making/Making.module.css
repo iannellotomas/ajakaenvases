@@ -1,0 +1,161 @@
+section.making {
+  width: calc(100% - 5vw);
+  padding-block: 30vh 10vh;
+  padding-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.makingBox {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  align-items: start;
+  justify-content: center;
+}
+
+.makingLeft {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+}
+
+.makingLeft::before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 1px;
+  border-radius: 50px;
+  background: #a5a5a567;
+}
+
+.makingItem {
+  width: calc(100% - 70px);
+  padding: 20px 20px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 6px;
+}
+
+.makingItem:not(.selectedMakingItem):hover {
+  background: #2a2a2a0b;
+  cursor: pointer;
+}
+
+.makingItem::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  background: var(--blue);
+  border-radius: 50px;
+  left: 0;
+  top: 0;
+  opacity: 0; 
+  transition: .2s ease;
+}
+
+.makingItem span {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.makingItem h3 {
+  color: #6D6D6D;
+  font-weight: 400;
+  font-size: calc(1rem + 1vw);
+}
+
+.makingItem h4 {
+  color: #6D6D6D;
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+.makingItem p {
+  padding-left: 60px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 150%;
+  max-width: 80%;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.makingItem ion-icon {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(calc(-50% - 15px));
+  right: 25px;
+  color: #6d6d6d;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.makingItem:not(.selectedMakingItem):hover ion-icon {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.selectedMakingItem {
+  background: linear-gradient(90deg, #6b99c83e, transparent 50%);
+}
+
+.selectedMakingItem h3 {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.selectedMakingItem h4 {
+  color: var(--blue);
+  font-weight: 600;
+}
+.selectedMakingItem p {
+  height: max-content;
+  opacity: 1;
+  margin-top: 10px;
+  pointer-events: all;
+  transition: .3s ease;
+}
+
+.selectedMakingItem::before {
+  opacity: 1;
+  animation: animateInProgress 15s linear forwards;
+}
+
+@keyframes animateInProgress {
+  from {
+    height: 30px;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.makingRight {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  overflow: hidden;
+}
+
+.makingRight img {
+  width: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}

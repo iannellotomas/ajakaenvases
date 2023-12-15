@@ -1,0 +1,126 @@
+.section {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  padding-block: 100px 20vh;
+  color: var(--white);
+  text-align: center;
+  background: linear-gradient(180deg, #000 0%, #0D1D2D 100%);
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 500px;
+  filter: blur(250px);
+  border-radius: 50%;
+  opacity: .8;
+  background: linear-gradient(180deg, #2A6DB2 -40%, #007EFF 100%);
+}
+
+.section>* {
+  z-index: 2;
+}
+
+.sectionTop {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.sectionTop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sectionBottom {
+  width: calc(100% - 10vw);
+  padding-inline: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.sectionBottom .description {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  max-width: 1200px;
+  font-size: calc(2rem + 2vw);
+  font-weight: 600;
+  line-height: 120%;
+}
+
+h1 span {
+  font-family: "Rochester", cursive;
+  font-weight: 400;
+  margin-inline: auto;
+  font-size: calc(2rem + 3.5vw);
+  padding-inline: 10px;
+  line-height: 80%;
+}
+
+.sectionBottom .description p {
+  max-width: 800px;
+  margin-inline: auto;
+  color: var(--white);
+  opacity: .7;
+}
+
+.sectionBottom .cta {
+  display: flex;
+  padding-inline: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.sectionBottom .cta span a {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0E559D;
+  border-radius: 10px;
+  transition: 0.15s ease;
+}
+
+.sectionBottom .cta span {
+  display: flex;
+  gap: 15px;
+}
+
+.sectionBottom .cta a ion-icon {
+  font-size: 32px;
+  color: #fff;
+}
+
+.sectionBottom .cta span a:hover {
+  background: #1476d9;
+}
+
+@media screen and (max-width: 800px) {
+  .sectionTop {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sectionTop {
+    height: 200px;
+  }
+}

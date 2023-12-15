@@ -1,0 +1,298 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 10vw);
+  padding-inline: 5vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  transition: .3s ease;
+}
+
+nav::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-shadow: 0 0 20px #7a7a7a1c;
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: -1;
+  transition: .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.logo {
+  display: flex;
+  height: 70px;
+  filter: brightness(0) invert(1);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu .link {
+  border: 2px solid rgba(36, 74, 112, 0.5);
+  padding: 8px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgb(156, 206, 255);
+  font-weight: 500;
+}
+
+.menu .link:hover {
+  background: rgba(36, 74, 112, 0.1);
+}
+
+.menu span {
+  width: 20px;
+  margin-right: 5px;
+  height: 2px;
+  background: rgba(36, 74, 112, 0.5);
+  position: relative;
+  pointer-events: none;
+}
+
+.menu span::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(36, 74, 112, 0.5);
+}
+
+.navRight {
+  display: flex;
+  gap: 10px;
+}
+
+.contactButton {
+  height: 50px;
+  padding-inline: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background: #0E559D;
+  border-radius: 50px;
+  transition: .15s ease;
+}
+
+.contactButton ion-icon {
+  font-size: 24px;
+  color: #fff;
+  --ionicon-stroke-width: 40px;
+}
+
+.contactButton span {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.contactButton:hover {
+  transform: scale(.95);
+}
+
+.buttonMenu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  font-weight: 500;
+  position: relative;
+  z-index: 100;
+}
+
+.buttonMenu span {
+  width: 30px;
+  height: 2px;
+  background: var(--blue);
+  position: absolute;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.buttonMenu span:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+.buttonMenu span:nth-child(3) {
+  transform: translateY(7px);
+}
+
+/* HOVER */
+
+.buttonMenuClose span:nth-child(2) {
+  opacity: 0;
+}
+
+.buttonMenuClose span:nth-child(1) {
+  transform: rotate(-45deg);
+}
+
+.buttonMenuClose span:nth-child(3) {
+  transform: rotate(45deg);
+}
+
+.buttonMenu::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 60px;
+  height: 60px;
+  background: #77777732;
+  border-radius: 50%;
+  transform: scale(.5);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.buttonMenu:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.backgroundMenu {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000a7;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+/* nav To Scroll */
+.nav.scrolled::before {
+  top: 0;
+}
+
+.nav.scrolled .logo {
+  filter: none;
+}
+
+.nav.scrolled .contactButton {
+  background: var(--blue);
+}
+
+@media screen and (min-width: 1300px) {
+  .nav.scrolled .menu .link {
+    border: 2px solid rgba(50, 64, 133, 0.2);
+    color: var(--blue);
+    font-weight: 500;
+  }
+  
+  .nav.scrolled .menu .link:hover {
+    background: rgba(50, 64, 133, 0.1);
+  }
+  
+  .nav.scrolled .menu span {
+    background: rgba(50, 64, 133, 0.2);
+  }
+  
+  .nav.scrolled .menu span::after {
+    background: rgba(50, 64, 133, 0.2);
+  }
+}
+
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1200px) {
+  .buttonMenu {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #e7e7e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15vh;
+    z-index: 3;
+    transform: translateX(100%);
+    pointer-events: none;
+    transition: .3s ease;
+  }
+
+  .menu.open {
+    transform: translateX(0);
+    pointer-events: all;
+    transition-delay: .1s;
+  }
+
+  .backgroundMenu.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .menu .link {
+    padding: 12px 30px;
+    font-size: 24px;
+    color: var(--blue) !important;
+    border: 2px solid rgba(50, 64, 133, 0.2);
+  }
+
+  .menu .link:hover {
+    background: rgba(50, 64, 133, 0.1) !important;
+  }
+
+  .menu span {
+    background: rgba(50, 64, 133, 0.2) !important;
+  }
+
+  .menu span::after {
+    background: rgba(50, 64, 133, 0.2) !important;
+  }
+
+  .menu span {
+    width: 3px;
+    margin-bottom: 5px;
+    height: 30px;
+    position: relative;
+    pointer-events: none;
+  }
+
+  .menu span::after {
+    content: "";
+    position: absolute;
+    top: calc(100%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .logo {
+    height: 60px;
+  }
+
+  .contactButton span {
+    display: none;
+  }
+}

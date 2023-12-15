@@ -1,0 +1,117 @@
+section.benefits {
+  width: calc(100% - 10vw);
+  padding-inline: 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 15vh;
+  padding-block: 20vh 10vh;
+}
+
+.benefitsItem {
+  display: flex;
+  height: 300px;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefitsItem:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.benefitsItem > span {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.benefitsItem > span:nth-child(1) {
+  width: calc(50% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+  border-radius: 20px;
+  border-top: 3px solid #D2D2D2;
+  border-left: 3px solid #D2D2D2;
+  background: #E7EFF7;
+  box-shadow: 8px 8px #386792;
+}
+
+.benefitsItem:nth-child(even) > span:nth-child(1) {
+  border-top: 3px solid #D2D2D2;
+  border-right: 3px solid #D2D2D2;
+  box-shadow: -8px 8px #386792;
+}
+
+.benefitsItem span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.benefitsItem h2 {
+  font-size: calc(1rem + 2vw);
+  background-image: linear-gradient(90deg, #202333, #4180B6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.benefitsItem h2 strong {
+  font-family: 'Rochester', cursive;
+  font-size: calc(1rem + 3.5vw);
+  padding-left: 5px;
+}
+
+.benefitsItem p {
+  max-width: 500px;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  section.benefits {
+    gap: 10vh;
+    padding-block: 10vh 5vh;
+  }
+
+  .benefitsItem {
+    height: max-content;
+    flex-direction: column-reverse !important;
+    gap: 20px;
+  }
+
+  .benefitsItem span {
+    width: 100%;
+    height: max-content;
+  }
+
+  .benefitsItem > span:nth-child(1) {
+    width: calc(100% - 40px);
+    height: calc(300px - 40px);
+  }
+
+  .benefitsItem > span:nth-child(2) {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .benefitsItem h2 {
+    font-size: 2.25rem;
+  }
+  
+  .benefitsItem h2 strong {
+    font-size: 3rem;
+  }
+  
+  .benefitsItem > span > p {
+    text-align: left;
+    max-width: 100%;
+  }
+
+}

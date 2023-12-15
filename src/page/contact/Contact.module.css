@@ -1,0 +1,160 @@
+section.contact {
+  width: calc(100% - 10vw);
+  padding-inline: 5vw;
+  position: relative;
+  padding-block: 30vh 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #d6eaff;
+}
+
+.contactBox {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+  margin-top: 10vh;
+  gap: 80px;
+}
+
+.contactOptions {
+  max-width: 30%;
+  gap: 20px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.contactOptions span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  width: calc(100% - 60px);
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  background: #bce0ff;
+  padding-inline: 30px;
+  flex-grow: 1;
+  border-radius: 6px;
+}
+
+.contactLocation {
+  flex-direction: column;
+  height: max-content;
+  padding-block: 20px;
+}
+
+.contactLocation span {
+  flex-direction: row;
+}
+
+.contactItem > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactItem ion-icon {
+  font-size: 50px;
+  color: #24496F;
+  transition: .15s ease;
+}
+
+.contactItem p {
+  font-weight: 600;
+  color: #1b1d2c;
+}
+
+.contactItem img {
+  width: 100%;
+  height: 250px;
+  object-position: bottom;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.contactItem:hover {
+  background: #a9d7ff;
+  box-shadow: 0 0 20px #a9d7ffb3;
+}
+
+.contactItem:hover ion-icon {
+  transform: scale(1.1);
+}
+
+
+/* Form */
+.contactForm {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.contactForm > span {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.textField {
+  width: calc(100% - 40px);
+  padding: 20px;
+  background: #dbe6f35f;
+  border: 2px solid #bbc5d0;
+  resize: none;
+  font-size: 20px;
+  border-radius: 6px;
+  color: var(--blue);
+  transition: var(--transition);
+  flex-grow: 1;
+}
+
+.contactForm textarea {
+  height: 200px;
+}
+
+.contactForm button {
+  width: 90%;
+  max-width: 400px;
+}
+
+.textField:focus {
+  border-color: var(--blue);
+}
+
+@media screen and (max-width: 1024px) {
+  .contactBox {
+    flex-direction: column;
+  }
+
+  .contactOptions, .contactForm {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .contactItem > img {
+    height: 300px;
+    object-position: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contactForm span {
+    flex-direction: column;
+  }
+}
